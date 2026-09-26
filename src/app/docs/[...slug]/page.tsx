@@ -3,6 +3,7 @@ import { notFound } from "next/navigation";
 
 import { AreaOverview } from "@/components/docs/area-overview";
 import { DocArticle } from "@/components/docs/doc-article";
+import { buildMetadata } from "@/lib/seo";
 import { getAllStaticParams, getAreaNav, getPage } from "@/lib/docs";
 
 export function generateStaticParams() {
@@ -13,9 +14,9 @@ export async function generateMetadata(props: PageProps<"/docs/[...slug]">): Pro
   const { slug } = await props.params;
   const path = slug.join("/");
   const page = getPage(path);
-  if (page) return { title: page.title, description: page.description };
+  if (page) return buildMetadata({ title: page.title, socialTitle: `${page.title} | Barn Docs`, description: page.description, path: `/docs/${page.path}` });
   const area = slug.length === 1 ? getAreaNav(slug[0]) : undefined;
-  return area ? { title: area.title, description: area.tagline } : {};
+  return area ? buildMetadata({ title: area.title, socialTitle: `${area.title} | Barn Docs`, description: area.tagline, path: `/docs/${area.id}` }) : {};
 }
 
 export default async function DocsPage(props: PageProps<"/docs/[...slug]">) {

@@ -7,6 +7,7 @@ import { buildSearchIndex, getAreaNavs } from "@/lib/docs";
 export const metadata: Metadata = {
   title: { default: "Barn Docs", template: "%s | Barn Docs" },
   description: "Documentation for Barn Computing: create a Barn, connect your devices and share files.",
+  alternates: { canonical: "/docs" },
 };
 
 export default function DocsLayout({ children }: LayoutProps<"/docs">) {

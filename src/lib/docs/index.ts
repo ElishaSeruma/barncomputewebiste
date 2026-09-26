@@ -131,6 +131,10 @@ export function getAreaOverview(id: string) {
   };
 }
 
+export function getAllPages(): ResolvedPage[] {
+  return [...pages.values()];
+}
+
 export function getAllStaticParams(): { slug: string[] }[] {
   assertLinks();
   return [...AREAS.map((a) => ({ slug: [a.id] })), ...[...pages.keys()].map((p) => ({ slug: p.split("/") }))];

@@ -270,3 +270,6 @@ export function FAQ() {
 export function CTA() {
   return <CtaSection />;
 }
+
+// Home page content lists, exported so llms-full.txt is generated from the same source.
+export { steps as homeSteps, vision as homeVision, values as homeValues, roadmap as homeRoadmap, faqs as homeFaqs };
