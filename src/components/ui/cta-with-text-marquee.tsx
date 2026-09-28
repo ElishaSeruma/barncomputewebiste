@@ -2,6 +2,7 @@
 
 import { cn } from "@/lib/utils";
 import { ReactNode, useEffect, useRef } from "react";
+import { Starfield, type StarfieldProps } from "@/components/ui/starfield";
 
 interface VerticalMarqueeProps {
   children: ReactNode;
@@ -62,13 +63,22 @@ export function VerticalMarquee({
   );
 }
 
+export interface MarqueeItem {
+  title: string;
+  /** A short line of detail shown under the title. */
+  detail: string;
+}
+
 export interface CTAWithVerticalMarqueeProps {
   title: ReactNode;
   description: ReactNode;
   /** Buttons / links rendered under the description. */
   actions?: ReactNode;
-  items: string[];
+  items: MarqueeItem[];
   className?: string;
+  /** Shows a drifting particle field behind the marquee column only. Off by default. */
+  particles?: boolean;
+  particleProps?: StarfieldProps;
 }
 
 export default function CTAWithVerticalMarquee({
@@ -77,6 +87,8 @@ export default function CTAWithVerticalMarquee({
   actions,
   items,
   className,
+  particles = false,
+  particleProps,
 }: CTAWithVerticalMarqueeProps) {
   const marqueeRef = useRef<HTMLDivElement>(null);
 
@@ -109,7 +121,8 @@ export default function CTAWithVerticalMarquee({
       });
 
       nodes.forEach((item) => {
-        (item as HTMLElement).style.fontWeight = item === active ? "700" : "300";
+        const titleEl = item.querySelector<HTMLElement>(".marquee-item-title");
+        if (titleEl) titleEl.style.fontWeight = item === active ? "700" : "300";
       });
     };
 
@@ -133,7 +146,7 @@ export default function CTAWithVerticalMarquee({
   }, []);
 
   return (
-    <div className={cn("w-full max-w-7xl", className)}>
+    <div className={cn("relative w-full max-w-7xl", className)}>
       <div className="grid grid-cols-1 items-center gap-8 lg:grid-cols-2 lg:gap-24">
         {/* Left content */}
         <div className="max-w-xl space-y-6 lg:space-y-8">
@@ -143,15 +156,35 @@ export default function CTAWithVerticalMarquee({
         </div>
 
         {/* Right marquee */}
-        <div ref={marqueeRef} className="relative flex h-[32svh] items-center justify-center lg:h-[62svh]">
-          <div className="relative h-full w-full">
-            <VerticalMarquee speed={20} className="h-full">
+        <div ref={marqueeRef} className="relative flex h-[38svh] items-center justify-center lg:h-[62svh]">
+          {/* `isolate` pins a stacking context here so the particle layer's negative z-index always
+              stays scoped to this box. Without it, the layer only stays behind while this section's
+              opacity is mid-transition (opacity < 1 incidentally creates a stacking context); once
+              the reveal finishes at opacity: 1, that context disappears and -z-10 escapes upward,
+              painting the particles behind unrelated ancestors instead — i.e. invisible. */}
+          <div className="isolate relative h-full w-full">
+            {particles && (
+              <Starfield
+                className="pointer-events-none absolute inset-0 -z-10"
+                starColor={{ r: 33, g: 33, b: 33 }}
+                starCount={1500}
+                waveFrequency={10}
+                starEscapeWidth={340}
+                maxOpacity={190}
+                rotationSpeed={0.00015}
+                waveSpeed={0.003}
+                particleSize={3}
+                {...particleProps}
+              />
+            )}
+
+            <VerticalMarquee speed={26} className="h-full">
               {items.map((item, idx) => (
-                <div
-                  key={idx}
-                  className="marquee-item py-5 text-3xl font-light text-foreground md:text-4xl lg:py-8 lg:text-5xl xl:text-6xl"
-                >
-                  {item}
+                <div key={idx} className="marquee-item py-4 lg:py-6">
+                  <div className="marquee-item-title text-3xl font-light leading-tight text-foreground md:text-4xl lg:text-5xl xl:text-6xl">
+                    {item.title}
+                  </div>
+                  <div className="mt-1.5 text-sm text-foreground/60 md:text-base lg:mt-2">{item.detail}</div>
                 </div>
               ))}
             </VerticalMarquee>

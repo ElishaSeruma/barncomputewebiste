@@ -8,11 +8,14 @@ import CTAWithVerticalMarquee from "@/components/ui/cta-with-text-marquee";
 import GatewayFlow from "@/components/ui/gateway-flow";
 
 const MARQUEE_ITEMS = [
-  "Private Barns",
-  "Trusted Nodes",
-  "Live availability",
-  "Authorised sharing",
-  "Verified transfers",
+  { title: "Private Barns", detail: "A trust boundary made only of the devices you approve." },
+  { title: "Trusted Nodes", detail: "Every device keeps its own persistent identity." },
+  { title: "Explicit approval", detail: "Nothing joins your Barn without you saying yes." },
+  { title: "Live availability", detail: "See what's online, suspect or offline, in real time." },
+  { title: "Direct connections", detail: "Files move straight between your own devices." },
+  { title: "Authorised sharing", detail: "One file, one device, for as long as you choose." },
+  { title: "Verified transfers", detail: "Checked chunk by chunk, resumable if interrupted." },
+  { title: "Built for growth", detail: "The same foundation is headed toward storage and compute." },
 ];
 
 const FONT = '"Satoshi", Arial, sans-serif';
@@ -96,6 +99,7 @@ export default function Hero() {
         description="Barn Computing connects the computers you trust into one private network, giving them a foundation to communicate, share data, and eventually combine storage and computing power."
         items={MARQUEE_ITEMS}
         className="mx-auto"
+        particles
         actions={
           <>
             <Link
