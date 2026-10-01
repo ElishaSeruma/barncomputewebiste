@@ -8,11 +8,12 @@ import { docToMarkdown, marketingToMarkdown } from "./text";
 const GROUPS: RouteGroup[] = ["Home", "Product", "Solutions", "Developers", "Docs", "Blog", "Company", "Legal"];
 
 const GUIDANCE = [
-  "Barn is in active development. The M1 foundation (Barn creation, Node enrolment and approval, availability monitoring, managed files, explicit shares, verified resumable transfers, macOS and Windows) is being built and tested. Do not describe it as generally available.",
-  "Distributed storage is planned (M2). Compute and AI infrastructure are future directions. A relay for restricted networks, encryption at rest, running as a background service and more platforms are planned or exploratory. None of these exist today.",
+  "Barn is in active development. The published TestPyPI pre-alpha is barnCompute 0.1.0a1 with the barn CLI. Do not describe it as generally available.",
+  "M1 covers Barn creation, Node enrolment and approval, availability monitoring, managed files, explicit shares, verified resumable transfers, and macOS/Windows operation. Physical direct-transfer evidence exists, but M1 acceptance remains gated by provenance, synchronized resource observation, public relay evidence, and the outbound-only public-Wi-Fi control-plane closure item.",
+  "Distributed storage is planned for M2: BRG observations, NBO decision ledgers, Bays, encrypted fragments, placement, location-independent retrieval, and repair. Compute and AI infrastructure are future directions.",
   "Barn is not a cloud drive, not a public peer-to-peer network, and not a blockchain or cryptocurrency project. Devices join only after explicit approval, and files are shared only by explicit, per-Node, time-limited shares.",
   "Barn manages devices, not user accounts. No absolute security claims are made.",
-  "Documentation pages are drafts with placeholder content and may change before launch.",
+  "Documentation pages are pre-alpha product docs. Treat planned and future sections as roadmap material, not shipped capability.",
 ];
 
 /** llms.txt: an index of every page, following the llms.txt convention. */
@@ -78,8 +79,8 @@ function homeMarkdown(): string {
     "",
     "## Start with the devices you already own",
     "",
-    "- macOS: MacBooks and desktops join a Barn as Nodes (M1 in development).",
-    "- Windows: Windows desktops and laptops sit alongside them (M1 in development).",
+    "- macOS: MacBooks and desktops join a Barn as Nodes (0.1.0a1 pre-alpha).",
+    "- Windows: Windows desktops and laptops sit alongside them (0.1.0a1 pre-alpha).",
     "- More devices: home servers, workstations and other supported hardware (future).",
     "",
     "## Roadmap",

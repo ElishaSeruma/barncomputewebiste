@@ -180,14 +180,14 @@ export function Platforms() {
               {
                 title: "macOS",
                 description: "MacBooks and desktops join your Barn as Nodes.",
-                badge: "M1 · In development",
+                badge: "0.1.0a1 · TestPyPI",
                 mockup: <DeviceMockup src="/platforms/mac.png" alt="Apple logo" dot="var(--status-green)" />,
                 buttons: [{ text: "Read the Mac guide", icon: <Apple className="h-4 w-4" />, href: "/docs/start/install/platform/macos" }],
               },
               {
                 title: "Windows",
                 description: "Windows desktops and laptops sit alongside them.",
-                badge: "M1 · In development",
+                badge: "0.1.0a1 · TestPyPI",
                 mockup: <DeviceMockup src="/platforms/windows.png" alt="Windows logo" dot="var(--status-green)" />,
                 buttons: [{ text: "Read the Windows guide", icon: <Grid2x2 className="h-4 w-4" />, href: "/docs/start/install/platform/windows" }],
               },
@@ -207,8 +207,8 @@ export function Platforms() {
 }
 
 const roadmap = [
-  { tag: "M1 · In development", tone: "now" as const, title: "Foundation", theme: "Connect the Barn.", items: ["Barn creation", "Node enrolment", "Trusted membership", "Device availability", "Communication", "Authorised file exchange", "macOS and Windows"] },
-  { tag: "Planned", tone: "future" as const, title: "M2 · Distributed Storage", theme: "Make storage collaborative.", items: ["Distribute and recover data across trusted Nodes", "Interact with the Barn, not every physical location"] },
+  { tag: "0.1.0a1 · TestPyPI", tone: "now" as const, title: "M1 Foundation", theme: "Connect the Barn.", items: ["Barn creation", "Node enrolment", "Trusted membership", "Heartbeats", "Managed files", "Recipient-bound shares", "Verified transfers"] },
+  { tag: "Planned", tone: "future" as const, title: "M2 Storage Fabric", theme: "Make storage collaborative.", items: ["BRG observations", "NBO decisions", "Bays", "Encrypted fragments", "Placement and repair"] },
   { tag: "Future", tone: "future" as const, title: "Compute", theme: "Put the Barn to work.", items: ["Explore scheduling suitable workloads across a Barn's available resources"] },
   { tag: "Future", tone: "future" as const, title: "AI Infrastructure", theme: "Private hardware, coordinated intelligence.", items: ["Explore compatible Nodes contributing to private AI workloads"] },
 ];
@@ -233,7 +233,7 @@ export function Roadmap() {
         </div>
         <Reveal>
           <p className="mt-8 max-w-2xl text-sm text-muted-foreground">
-            Anything beyond the current milestone is planned or exploratory. No dates are promised.
+            M1 has a TestPyPI pre-alpha and physical direct-transfer evidence, with closure gates still open. Anything beyond M1 is planned or exploratory.
           </p>
         </Reveal>
       </div>
@@ -245,7 +245,7 @@ const faqs = [
   ["Is Barn cloud storage?", "Not in the traditional sense. Barn is being built as a private distributed computing layer for trusted devices. Storage is one part of the larger direction, alongside communication and compute."],
   ["Do all my devices automatically join?", "No. Devices must be deliberately added and approved before becoming Nodes in a Barn."],
   ["Does joining a Barn automatically share every file on my computer?", "No. Barn's model is based on explicit actions. Files must be deliberately brought into Barn's managed environment before supported sharing operations can occur."],
-  ["Does Barn require every device to be on the same Wi-Fi?", "Not as a permanent product principle. Barn is being designed to cope with different networking conditions, although connectivity depends on the capabilities available in a given release and the restrictions of the network being used."],
+  ["Does Barn require every device to be on the same Wi-Fi?", "For the current foundation, devices need trusted network reachability for coordinator control and direct peer transfer. Relay work exists, but full public-Wi-Fi operation still has an open outbound-only control-plane closure gate."],
   ["What platforms does Barn target first?", "The initial desktop foundation targets macOS and Windows."],
   ["Is distributed storage available now?", "No. The initial milestone focuses on the networking and file-exchange foundation. More advanced distributed storage belongs to later milestones and is described as planned until released and verified."],
   ["Can Barn combine the computing power of my devices?", "That is part of the longer-term compute direction. It is not a current capability."],

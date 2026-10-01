@@ -7,11 +7,11 @@ export const SITE_TAGLINE = "Your Devices. One Barn.";
 export const SITE_TITLE = `${SITE_NAME} | ${SITE_TAGLINE}`;
 
 export const SITE_DESCRIPTION =
-  "Barn Computing is building a private computing network that lets trusted devices communicate, share data, and grow into distributed storage and compute infrastructure.";
+  "Barn Computing is a pre-alpha private device network for trusted macOS and Windows machines, starting with explicit membership and verified file exchange.";
 
 // Canonical public description, reused by llms.txt and the press kit.
 export const SITE_SUMMARY =
-  "Barn Computing is a private distributed computing platform that connects trusted, user-controlled devices into a coordinated network called a Barn. Each approved device becomes a Node. The first Barn foundation focuses on trusted device membership, connectivity, availability, and authorised file exchange between supported computers. Over time, Barn is intended to build on that foundation with distributed storage and compute capabilities, allowing the hardware users already control to operate more like shared private infrastructure.";
+  "Barn Computing connects trusted, user-controlled devices into a private coordinated network called a Barn. Each approved device becomes a Node. The current barnCompute 0.1.0a1 TestPyPI pre-alpha focuses on trusted device membership, availability, managed files, explicit recipient-scoped shares, and verified resumable file exchange between supported macOS and Windows computers. M1 acceptance remains under closure review, while M2 is planned as a storage fabric with Bays, encrypted fragments, placement, retrieval, and repair.";
 
 export const SOCIAL_IMAGE = {
   url: "/social.png",

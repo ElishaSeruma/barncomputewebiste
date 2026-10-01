@@ -14,7 +14,7 @@ export const blogIndex: MarketingPage = {
   hero: {
     eyebrow: "Blog",
     title: "Notes from the {barn.}",
-    description: "Design decisions, progress and the reasoning behind them. Posts are drafts for now and will be replaced with the real ones before launch.",
+    description: "Design decisions, release notes, acceptance evidence and the reasoning behind Barn's private device network.",
     primary: { label: "Read the announcement", href: "/blog/introducing-barn" },
     secondary: { label: "See the roadmap", href: "/roadmap" },
   },

@@ -20,17 +20,17 @@ export const Component = () => {
         {/* Section header */}
         <div className="mb-16 flex flex-col items-center text-center">
           <div className="mb-6 inline-flex items-center rounded-full border border-border bg-white/40 px-3 py-1 text-xs font-medium uppercase text-muted-foreground">
-            M1 · In development
+            0.1.0a1 · TestPyPI
           </div>
           <h2 className="mb-4 max-w-3xl text-balance text-4xl font-bold sm:text-5xl md:text-6xl">
             Starting with the foundation. <br className="hidden sm:block" />
             <span className="text-foreground/40">Built in layers.</span>
           </h2>
           <p className="max-w-2xl text-balance text-base text-muted-foreground sm:text-lg">
-            The first milestone establishes the core network: Barn creation, trusted device enrolment,
-            device availability, communication, and authorised file exchange. Distributed storage and
-            compute only become useful once the devices underneath can identify, trust, reach and
-            coordinate with one another.
+            The TestPyPI pre-alpha establishes the core network: Barn creation, trusted device
+            enrolment, device availability, managed files, explicit shares, and verified file
+            exchange. Distributed storage and compute only become useful once the devices underneath
+            can identify, trust, reach and coordinate with one another.
           </p>
         </div>
 

@@ -1,7 +1,7 @@
-// Content model for the docs. Pages are plain data so they can be swapped for real content later.
+// Content model for Barn's pre-alpha docs. Pages are plain data so route rendering stays consistent.
 
 export type CalloutKind = "note" | "tip" | "warning" | "future";
-export type Badge = "Draft" | "New" | "Future" | "Planned" | "Alpha";
+export type Badge = "Draft" | "New" | "Future" | "Planned" | "Alpha" | "Pre-alpha" | "Closure gate";
 
 export type Block =
   | { t: "h2"; text: string }

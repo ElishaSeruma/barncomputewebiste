@@ -55,7 +55,7 @@ export const start: AreaDef = {
             { title: "Roadmap", text: "What is built and what is next.", href: "/docs/roadmap/overview" }
           ),
         ],
-        { badge: "Draft" }
+        { badge: "Pre-alpha" }
       ),
       page(
         "quickstart",
@@ -107,7 +107,7 @@ export const start: AreaDef = {
           p("On the receiving machine, look in your inbox and fetch the file."),
           code("barn share inbox\nbarn share fetch <SHARE_ID> --output ./received.bin"),
         ],
-        { badge: "Draft" }
+        { badge: "Pre-alpha" }
       ),
     ]),
     section("install", "Installation", [
@@ -133,7 +133,7 @@ export const start: AreaDef = {
           ),
           warn("Guest and public Wi-Fi networks often isolate clients from one another. If your devices cannot reach each other, see [Public Wi-Fi](/docs/build/networking/public-wifi)."),
         ],
-        { badge: "Draft" }
+        { badge: "Pre-alpha" }
       ),
       folder("platform", "Platform guides", [
         page(
@@ -145,7 +145,7 @@ export const start: AreaDef = {
             code("python3.12 -m venv .venv-barn\nsource .venv-barn/bin/activate\npython -m pip install --upgrade pip", "bash", "zsh"),
             p("Install the runtime dependencies first, then the Barn package itself."),
             code("python -m pip install -r requirements/runtime-test.txt\npython -m pip install --no-deps 'barnCompute==0.1.0a1'", "bash", "zsh"),
-            note("The exact package source and version will change before general release. These commands are placeholders for the alpha."),
+            note("The current published alpha is `barnCompute==0.1.0a1` on TestPyPI. Install runtime dependencies from production PyPI first, then install the Barn package with `--no-deps` when reproducing release evidence."),
             h2("Allow incoming connections"),
             p("If the macOS firewall is on, allow the Python interpreter when prompted so other devices can reach your Node. Do not disable the firewall entirely."),
           ],
@@ -176,7 +176,7 @@ export const start: AreaDef = {
           code("barn doctor"),
           p("`barn doctor` checks your platform, Python and package versions, certificates, local ports, connectivity, clock skew and permissions. Add `--json` to attach the report to a bug report. Secrets are never printed."),
         ],
-        { badge: "Draft" }
+        { badge: "Pre-alpha" }
       ),
       page(
         "upgrade",
@@ -187,7 +187,7 @@ export const start: AreaDef = {
           ol("Stop the coordinator and any node agents.", "Install the new version into the same virtual environment.", "Start the coordinator, then the node agents.", "Run `barn doctor` to confirm everything is healthy."),
           warn("Alpha releases can change the wire protocol. If two devices run incompatible versions, `barn doctor` reports a protocol mismatch. Upgrade both devices together."),
         ],
-        { badge: "Draft" }
+        { badge: "Pre-alpha" }
       ),
     ]),
     section("concepts", "Core concepts", [
@@ -294,7 +294,7 @@ export const start: AreaDef = {
           code("barn nodes\nbarn doctor"),
           p("Both Nodes should show as online with different Node IDs."),
         ],
-        { badge: "Draft" }
+        { badge: "Pre-alpha" }
       ),
       page(
         "share-your-first-file",
@@ -310,7 +310,7 @@ export const start: AreaDef = {
           note("Barn will not overwrite an existing output path. Choose a new filename."),
           tip("Windows users can compare checksums with `Get-FileHash .\\sample.bin -Algorithm SHA256`.", "On Windows"),
         ],
-        { badge: "Draft" }
+        { badge: "Pre-alpha" }
       ),
       page(
         "next-steps",

@@ -44,7 +44,7 @@ export const solutionsIndex: MarketingPage = {
   description: "See how Barn fits home labs, creative studios, small teams, individuals and developers.",
   hero: {
     eyebrow: "Solutions",
-    badge: "M1 in development",
+    badge: "0.1.0a1 pre-alpha",
     title: "One foundation. Many {setups.}",
     description:
       "Barn is not built for one kind of user. It is built for anyone with more than one capable computer and a reason to keep their data close. Here is how it fits the setups we hear about most.",
@@ -75,7 +75,7 @@ export const solutionsIndex: MarketingPage = {
     },
     {
       t: "stats",
-      eyebrow: "Draft defaults",
+      eyebrow: "Alpha defaults",
       title: "Numbers that apply to every setup.",
       items: [
         { value: 5, suffix: " s", label: "Heartbeat", note: "Availability signal." },
@@ -155,7 +155,7 @@ export const solutions: Record<string, MarketingPage> = {
           { icon: "share", title: "Files where they are needed", text: "Import a file and share it with the one machine that needs it. It goes directly, with no detour through the internet." },
           { icon: "filecheck", title: "Copies you can trust", text: "Every chunk and the final file are verified, and interrupted transfers resume from where they stopped." },
           { icon: "ban", title: "Easy to retire a machine", text: "Revoke a device and it is out. There is nothing to unpick on the others." },
-          { icon: "wifi", title: "Stays on your network", text: "The coordinator and Nodes talk over verified HTTPS inside your own network. No account, no relay." },
+          { icon: "wifi", title: "Stays on your network", text: "The coordinator and Nodes talk over verified HTTPS inside your own network for the direct M1 path. No hosted account is required." },
         ],
       },
       {
@@ -290,7 +290,7 @@ export const solutions: Record<string, MarketingPage> = {
         title: "Studio questions",
         items: [
           { q: "Can two people work on the same file?", a: "No. Barn moves files. It does not do live collaboration or merging." },
-          { q: "Can a freelancer join from outside our network?", a: "Not in the first milestone. Devices need to reach each other on a trusted network. An optional relay for restricted networks is planned." },
+          { q: "Can a freelancer join from outside our network?", a: "Not as a completed M1 claim. Data relay work exists, but full public-Wi-Fi operation still depends on the coordinator control-plane closure gate." },
           { q: "Does Barn keep old versions?", a: "Managed files are immutable, so each import is its own version. Barn does not manage version history for you." },
           { q: "Is there a per person permission system?", a: "Barn manages devices, not user accounts. Access is granted to a device for a file." },
         ],
@@ -555,9 +555,9 @@ export const solutions: Record<string, MarketingPage> = {
         title: "A private file exchange in three commands.",
         text: "Everything you can do by hand can be done in a script, because it is all the same command line.",
         tabs: [
-          { label: "import", command: "barn file add ./build.tar --name build.tar", lines: [{ text: "", delay: 60 }, { text: "  ✓ Imported build.tar", tone: "green", delay: 300 }, { text: "    file id  91c4", tone: "muted", delay: 200 }, { text: "", delay: 60 }, { text: "  Illustrative output", tone: "note", delay: 100 }] },
-          { label: "share", command: "barn share create 91c4 --to 7a3d --ttl 10m --json", lines: [{ text: "", delay: 60 }, { text: '  { "share_id": "c0de", "expires_in": "10m" }', tone: "muted", delay: 300 }, { text: "", delay: 60 }, { text: "  Illustrative output", tone: "note", delay: 100 }] },
-          { label: "fetch", command: "barn share fetch c0de --output ./build.tar", lines: [{ text: "", delay: 60 }, { text: "  ■■■■■■■■■■■■■■■■■■■■■■■■  24/24 chunks", tone: "green", delay: 420 }, { text: "  ✓ checksum verified", tone: "green", delay: 240 }, { text: "", delay: 60 }, { text: "  Illustrative output", tone: "note", delay: 100 }] },
+          { label: "import", command: "barn file add ./build.tar --name build.tar --json", lines: [{ text: "", delay: 60 }, { text: '  { "file_id": "91c4", "chunks": 24 }', tone: "green", delay: 300 }, { text: "  immutable managed copy created", tone: "muted", delay: 200 }, { text: "", delay: 60 }, { text: "  chunk and full-file SHA-256 recorded", tone: "note", delay: 100 }] },
+          { label: "share", command: "barn share create 91c4 --to 7a3d --ttl 10m --json", lines: [{ text: "", delay: 60 }, { text: '  { "share_id": "c0de", "expires_in": "10m" }', tone: "muted", delay: 300 }, { text: "  grant scope: file 91c4 -> node 7a3d", tone: "yellow", delay: 220 }, { text: "", delay: 60 }, { text: "  no wildcard or public shares", tone: "note", delay: 100 }] },
+          { label: "fetch", command: "barn share fetch c0de --output ./build.tar", lines: [{ text: "", delay: 60 }, { text: "  chunks       24/24 verified", tone: "green", delay: 420 }, { text: "  sha256       matched final manifest", tone: "green", delay: 240 }, { text: "", delay: 60 }, { text: "  transfer path: direct HTTPS", tone: "note", delay: 100 }] },
         ],
       },
       {

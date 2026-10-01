@@ -26,7 +26,7 @@ import {
 } from "lucide-react";
 import type { NavItem } from "@/components/ui/dorpdown-navigation";
 
-// Placeholder destinations. Items marked "(Future)" describe roadmap direction, not shipped features.
+// Items marked "Future" describe roadmap direction, not shipped features.
 export const NAV_ITEMS: NavItem[] = [
   {
     id: 1,

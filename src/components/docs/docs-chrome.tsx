@@ -49,7 +49,7 @@ export default function DocsChrome({
   return (
     <div className="flex min-h-svh flex-col">
       <div className="bg-accent/25 px-4 py-1.5 text-center text-xs text-foreground/80">
-        Draft documentation. Content is placeholder and will change before launch.
+        Pre-alpha documentation for barnCompute 0.1.0a1. Pages distinguish verified M1 evidence, open closure gates, and planned M2 work.
       </div>
 
       <header className="sticky top-0 z-50 border-b border-border bg-background/85 backdrop-blur-md">

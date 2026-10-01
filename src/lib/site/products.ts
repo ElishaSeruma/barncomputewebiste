@@ -54,7 +54,7 @@ export const productIndex: MarketingPage = {
   description: "Barn turns the devices you trust into a private network that can communicate, share data, and grow into storage and compute.",
   hero: {
     eyebrow: "Product",
-    badge: "M1 in development",
+    badge: "0.1.0a1 pre-alpha",
     title: "Everything your devices need to {work as one.}",
     description:
       "Barn is a foundation for turning separate computers into one private, coordinated environment. Start with trusted membership, live availability and verified file exchange. Grow toward storage and compute.",
@@ -81,7 +81,7 @@ export const productIndex: MarketingPage = {
     },
     {
       t: "stats",
-      eyebrow: "Draft defaults",
+      eyebrow: "Alpha defaults",
       title: "The numbers that shape everyday use.",
       items: [
         { value: 1, suffix: " MiB", label: "Chunk size", note: "Every chunk is verified on its own." },
@@ -139,7 +139,7 @@ export const products: Record<string, MarketingPage> = {
     description: "A Barn is a private group of approved devices. Create one, admit the devices you trust, and keep the trust boundary in your hands.",
     hero: {
       eyebrow: "Product",
-      badge: "M1 in development",
+      badge: "0.1.0a1 pre-alpha",
       title: "A private network for the devices you {trust.}",
       description:
         "A Barn is the trust boundary around your devices. Nothing joins because it is nearby, and nothing is shared because it belongs. Membership is deliberate, and you hold the keys.",
@@ -239,7 +239,7 @@ export const products: Record<string, MarketingPage> = {
     description: "A Node is an approved device with its own persistent identity, reachable by other Nodes and visible to you.",
     hero: {
       eyebrow: "Product",
-      badge: "M1 in development",
+      badge: "0.1.0a1 pre-alpha",
       title: "Every device gets an identity of its {own.}",
       description:
         "A Node is a device you approved. It keeps the same identity across restarts, upgrades and address changes, so the Barn always knows who is who, regardless of where it is on the network.",
@@ -315,8 +315,8 @@ export const products: Record<string, MarketingPage> = {
         text: "The command line shows the Nodes in your Barn and their current states. Add JSON output when you want to script against it.",
         bullets: ["Green, yellow and red mirror the three availability states.", "Node IDs are stable, so scripts can rely on them."],
         tabs: [
-          { label: "nodes", command: "barn nodes", lines: [{ text: "", delay: 60 }, { text: "  ● MacNode        ONLINE", tone: "green", delay: 260 }, { text: "  ● WindowsNode    ONLINE", tone: "green", delay: 260 }, { text: "  ● StudyPC        SUSPECT", tone: "yellow", delay: 260 }, { text: "  ● OldLaptop      OFFLINE", tone: "red", delay: 260 }, { text: "", delay: 60 }, { text: "  Illustrative output", tone: "note", delay: 100 }] },
-          { label: "enrol", command: "barn coordinator enrolments", lines: [{ text: "", delay: 60 }, { text: "  request  2f6b1c8e", tone: "muted", delay: 200 }, { text: "  name     StudyPC", tone: "muted", delay: 200 }, { text: "  status   awaiting approval", tone: "yellow", delay: 260 }, { text: "", delay: 60 }, { text: "  Illustrative output", tone: "note", delay: 100 }] },
+          { label: "nodes", command: "barn nodes", lines: [{ text: "", delay: 60 }, { text: "  NODE ID   NAME          STATE", tone: "muted", delay: 180 }, { text: "  4f91     MacNode       ONLINE", tone: "green", delay: 260 }, { text: "  7a3d     WindowsNode   ONLINE", tone: "green", delay: 260 }, { text: "  b812     StudyPC       SUSPECT", tone: "yellow", delay: 260 }, { text: "", delay: 60 }, { text: "  barnCompute 0.1.0a1 pre-alpha", tone: "note", delay: 100 }] },
+          { label: "enrol", command: "barn coordinator enrolments", lines: [{ text: "", delay: 60 }, { text: "  request_id  2f6b1c8e", tone: "muted", delay: 200 }, { text: "  name        StudyPC", tone: "muted", delay: 200 }, { text: "  status      awaiting approval", tone: "yellow", delay: 260 }, { text: "", delay: 60 }, { text: "  approve with: barn coordinator approve 2f6b1c8e", tone: "note", delay: 100 }] },
         ],
       },
       {
@@ -340,7 +340,7 @@ export const products: Record<string, MarketingPage> = {
     description: "Know which of your devices are online, which have gone quiet and which are offline, with a heartbeat that means something.",
     hero: {
       eyebrow: "Product",
-      badge: "M1 in development",
+      badge: "0.1.0a1 pre-alpha",
       title: "Know what is {online.} Not what is assumed.",
       description:
         "Each Node reports in every few seconds. Barn turns that into three honest states, and separates a device the coordinator can hear from a device other Nodes can actually reach.",
@@ -378,7 +378,7 @@ export const products: Record<string, MarketingPage> = {
     sections: [
       {
         t: "stats",
-        eyebrow: "Draft defaults",
+        eyebrow: "Alpha defaults",
         title: "The clock behind the states.",
         items: [
           { value: 5, suffix: " s", label: "Heartbeat interval", note: "Signed and sequenced." },
@@ -419,8 +419,8 @@ export const products: Record<string, MarketingPage> = {
         title: "Diagnose without guessing.",
         text: "When something looks wrong, ask the tool. It checks the things that usually cause trouble and explains the result in plain language.",
         tabs: [
-          { label: "nodes", command: "barn nodes", lines: [{ text: "", delay: 60 }, { text: "  ● MacNode        ONLINE", tone: "green", delay: 260 }, { text: "  ● StudyPC        SUSPECT", tone: "yellow", delay: 260 }, { text: "  ● OldLaptop      OFFLINE", tone: "red", delay: 260 }, { text: "", delay: 60 }, { text: "  Illustrative output", tone: "note", delay: 100 }] },
-          { label: "doctor", command: "barn doctor", lines: [{ text: "", delay: 60 }, { text: "  ✓ Certificate valid and matches address", tone: "green", delay: 260 }, { text: "  ✓ Coordinator reachable", tone: "green", delay: 260 }, { text: "  ✓ Clock difference within tolerance", tone: "green", delay: 260 }, { text: "  ! Peer port 8445 not reachable", tone: "yellow", delay: 320 }, { text: "    Check the firewall on this device.", tone: "muted", delay: 200 }, { text: "", delay: 60 }, { text: "  Illustrative output", tone: "note", delay: 100 }] },
+          { label: "nodes", command: "barn nodes", lines: [{ text: "", delay: 60 }, { text: "  NODE ID   NAME        STATE", tone: "muted", delay: 180 }, { text: "  4f91     MacNode     ONLINE", tone: "green", delay: 260 }, { text: "  b812     StudyPC     SUSPECT", tone: "yellow", delay: 260 }, { text: "  a044     OldLaptop   OFFLINE", tone: "red", delay: 260 }, { text: "", delay: 60 }, { text: "  states are based on signed heartbeats", tone: "note", delay: 100 }] },
+          { label: "doctor", command: "barn doctor", lines: [{ text: "", delay: 60 }, { text: "  PASS  coordinator certificate matches address", tone: "green", delay: 260 }, { text: "  PASS  coordinator reachable", tone: "green", delay: 260 }, { text: "  PASS  clock skew within tolerance", tone: "green", delay: 260 }, { text: "  WARN  peer port 8445 not reachable", tone: "yellow", delay: 320 }, { text: "        check the private-network firewall rule", tone: "muted", delay: 200 }, { text: "", delay: 60 }, { text: "  add --json for a redacted diagnostic report", tone: "note", delay: 100 }] },
         ],
       },
       {
@@ -444,7 +444,7 @@ export const products: Record<string, MarketingPage> = {
     description: "Import a file into Barn on purpose. Barn keeps an immutable copy, and records checksums so it can be shared and verified later.",
     hero: {
       eyebrow: "Product",
-      badge: "M1 in development",
+      badge: "0.1.0a1 pre-alpha",
       title: "Only files you {choose} ever leave the room.",
       description:
         "Barn never exposes your filesystem. To share something you import it, deliberately, into managed storage. From that moment it has a fixed identity, a size and a set of checksums.",
@@ -504,7 +504,7 @@ export const products: Record<string, MarketingPage> = {
       },
       {
         t: "stats",
-        eyebrow: "Draft defaults",
+        eyebrow: "Alpha defaults",
         title: "Sized for real files.",
         items: [
           { value: 1, suffix: " MiB", label: "Chunk size", note: "The last chunk may be smaller." },
@@ -552,7 +552,7 @@ export const products: Record<string, MarketingPage> = {
     description: "Share one file with one Node, read only, for a limited time, and revoke it whenever you like.",
     hero: {
       eyebrow: "Product",
-      badge: "M1 in development",
+      badge: "0.1.0a1 pre-alpha",
       title: "Share one file with one device, for a {while.}",
       description:
         "Belonging to a Barn does not expose your files. Sharing is a second, separate decision that names a file, a recipient and a lifetime. Nothing more, nothing by default.",
@@ -628,9 +628,9 @@ export const products: Record<string, MarketingPage> = {
         title: "Create, check and revoke.",
         text: "The whole lifecycle is a handful of commands.",
         tabs: [
-          { label: "create", command: "barn share create sample.bin --to WindowsNode --ttl 30m", lines: [{ text: "", delay: 60 }, { text: "  ✓ Share created", tone: "green", delay: 300 }, { text: "    recipient  WindowsNode", tone: "muted", delay: 160 }, { text: "    access     read-only, expires in 30m", tone: "yellow", delay: 260 }, { text: "", delay: 60 }, { text: "  Illustrative output", tone: "note", delay: 100 }] },
-          { label: "inbox", command: "barn share inbox", lines: [{ text: "", delay: 60 }, { text: "  c0de  sample.bin  from MacNode", tone: "muted", delay: 260 }, { text: "        expires in 27m", tone: "yellow", delay: 240 }, { text: "", delay: 60 }, { text: "  Illustrative output", tone: "note", delay: 100 }] },
-          { label: "revoke", command: "barn share revoke c0de", lines: [{ text: "", delay: 60 }, { text: "  ✓ Share revoked. New transfers cannot start.", tone: "green", delay: 300 }, { text: "", delay: 60 }, { text: "  Illustrative output", tone: "note", delay: 100 }] },
+          { label: "create", command: "barn share create 91c4 --to 7a3d --ttl 30m", lines: [{ text: "", delay: 60 }, { text: "  share_id    c0de", tone: "green", delay: 300 }, { text: "  recipient   7a3d", tone: "muted", delay: 160 }, { text: "  access      read-only, expires in 30m", tone: "yellow", delay: 260 }, { text: "", delay: 60 }, { text: "  grant is file-, recipient- and expiry-bound", tone: "note", delay: 100 }] },
+          { label: "inbox", command: "barn share inbox", lines: [{ text: "", delay: 60 }, { text: "  c0de  file 91c4  from 4f91", tone: "muted", delay: 260 }, { text: "        expires in 27m", tone: "yellow", delay: 240 }, { text: "", delay: 60 }, { text: "  fetch with: barn share fetch c0de --output ./sample.bin", tone: "note", delay: 100 }] },
+          { label: "revoke", command: "barn share revoke c0de", lines: [{ text: "", delay: 60 }, { text: "  share c0de revoked", tone: "green", delay: 300 }, { text: "  new transfer grants will be denied", tone: "muted", delay: 180 }, { text: "", delay: 60 }, { text: "  bytes already delivered cannot be recalled", tone: "note", delay: 100 }] },
         ],
       },
       {
@@ -654,7 +654,7 @@ export const products: Record<string, MarketingPage> = {
     description: "Verified, resumable file exchange directly between your devices, with clear errors when something goes wrong.",
     hero: {
       eyebrow: "Product",
-      badge: "M1 in development",
+      badge: "0.1.0a1 pre-alpha",
       title: "Move files directly. Verify every {chunk.}",
       description:
         "Files travel straight between your devices in one megabyte chunks. Each chunk is checked as it arrives, interruptions resume from what was already verified, and the finished file is compared against the original checksum.",
@@ -715,7 +715,7 @@ export const products: Record<string, MarketingPage> = {
       },
       {
         t: "stats",
-        eyebrow: "Draft defaults",
+        eyebrow: "Alpha defaults",
         title: "Bounded on purpose.",
         items: [
           { value: 1, suffix: " MiB", label: "Chunk size", note: "Verified individually." },
@@ -744,8 +744,8 @@ export const products: Record<string, MarketingPage> = {
         title: "Watch it recover.",
         text: "Check progress at any point, and resume with a single command.",
         tabs: [
-          { label: "status", command: "barn transfer status 5e1a", lines: [{ text: "", delay: 60 }, { text: "  sample.bin  ←  MacNode", tone: "muted", delay: 260 }, { text: "  ■■■■■■■■■■■■■■■■■□□□□□□□  17/24 chunks", tone: "yellow", delay: 360 }, { text: "  retries 2, last error: source offline", tone: "red", delay: 300 }, { text: "", delay: 60 }, { text: "  Illustrative output", tone: "note", delay: 100 }] },
-          { label: "resume", command: "barn transfer resume 5e1a", lines: [{ text: "", delay: 60 }, { text: "  resuming from 17 verified chunks", tone: "muted", delay: 300 }, { text: "  ■■■■■■■■■■■■■■■■■■■■■■■■  24/24 chunks", tone: "green", delay: 420 }, { text: "  ✓ checksum verified", tone: "green", delay: 240 }, { text: "", delay: 60 }, { text: "  Illustrative output", tone: "note", delay: 100 }] },
+          { label: "status", command: "barn transfer status 5e1a", lines: [{ text: "", delay: 60 }, { text: "  transfer_id  5e1a", tone: "muted", delay: 220 }, { text: "  source       4f91 MacNode", tone: "muted", delay: 220 }, { text: "  chunks       17/24 verified", tone: "yellow", delay: 360 }, { text: "  last_error   source offline", tone: "red", delay: 300 }, { text: "", delay: 60 }, { text: "  verified chunks remain journaled", tone: "note", delay: 100 }] },
+          { label: "resume", command: "barn transfer resume 5e1a", lines: [{ text: "", delay: 60 }, { text: "  resuming from 17 verified chunks", tone: "muted", delay: 300 }, { text: "  chunks       24/24 verified", tone: "green", delay: 420 }, { text: "  sha256       matched final manifest", tone: "green", delay: 240 }, { text: "", delay: 60 }, { text: "  exported with no-clobber destination checks", tone: "note", delay: 100 }] },
         ],
       },
       {
@@ -753,7 +753,7 @@ export const products: Record<string, MarketingPage> = {
         title: "Questions about transfers",
         items: [
           { q: "Does the file pass through the coordinator?", a: "No. The coordinator authorises a transfer, but the bytes go directly between the two devices." },
-          { q: "What if the two devices cannot reach each other?", a: "The transfer fails with a clear error and never falls back to an insecure path. An optional relay for restricted networks is planned but is not part of the first milestone." },
+          { q: "What if the two devices cannot reach each other?", a: "The transfer fails with a clear error and never falls back to an insecure path. Relay data transport exists in the M1 work, but complete public-Wi-Fi operation still needs the outbound-only coordinator control path described in the closure gate." },
           { q: "Is this the same as distributed storage?", a: "No. The sender keeps its copy and the receiver gets its own. Spreading data across several Nodes is a separate, planned milestone." },
           { q: "Can two transfers run at once?", a: "Yes, within bounded limits, and cancelling one does not affect the other." },
         ],

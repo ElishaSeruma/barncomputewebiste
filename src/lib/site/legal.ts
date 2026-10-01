@@ -1,37 +1,40 @@
 import { h2, note, p, ul, warn } from "@/lib/docs/types";
 import type { MarketingPage } from "./types";
 
-// Placeholders. Final legal text must be written and reviewed before launch.
+// Plain-language product notices for the pre-alpha website. Counsel-reviewed
+// legal documents should replace these before any production commercial launch.
 export const privacy: MarketingPage = {
   path: "/legal/privacy",
   title: "Privacy",
-  description: "Placeholder privacy notice for the Barn Computing website. Final text will be published before launch.",
+  description: "Privacy notes for the Barn Computing pre-alpha website and local-first software model.",
   hero: {
     eyebrow: "Legal",
-    badge: "Placeholder",
+    badge: "Pre-alpha notice",
     title: "Privacy, in {plain terms.}",
-    description: "This page will hold the privacy notice for the website and, later, the product. The text below is a placeholder and is not a legal document.",
+    description: "How the website and current barnCompute design treat contact details, device metadata and file contents during the pre-alpha period.",
   },
   sections: [
     {
       t: "prose",
       blocks: [
-        warn("Placeholder content. This page has not been reviewed by counsel and must be replaced before launch.", "Not final"),
-        h2("What this page will cover"),
+        warn("This is a product notice for a pre-alpha project, not a counsel-reviewed privacy policy.", "Pre-alpha"),
+        h2("What this page covers"),
         ul(
-          "What information the website collects, if any, and why.",
-          "How the contact form is handled once it is connected.",
-          "What the software does and does not send off your devices.",
-          "How long anything is kept, and how to ask for it to be removed.",
-          "Who to contact with privacy questions."
+          "What the website is intended to collect during the pre-alpha period.",
+          "How the contact form should be treated until backend processing is connected.",
+          "What the current barnCompute CLI does and does not send off your devices.",
+          "Which metadata exists inside a Barn you operate yourself.",
+          "How to ask questions while formal support channels are still being prepared."
         ),
         h2("How Barn is designed"),
-        p("Barn is built around devices you own. Files move directly between your devices and are not sent through a central service. The coordinator you run keeps metadata such as device identities and share records on your own machine."),
-        note("This describes design intent for the alpha and is not a commitment about future services."),
+        p("Barn is built around devices you own or are permitted to use. In the M1 design, file bytes move between approved Nodes rather than through a hosted Barn service. The coordinator you run keeps metadata such as Barn identity, Node identities, shares, grants, transfer records and audit events on your own machine."),
+        note("A separately deployed relay may be used for restricted-network transport, but it is not a Barn authority and must not receive node private keys, coordinator admin tokens or plaintext file bytes."),
         h2("The website"),
-        p("The website is a preview. The contact form does not send or store anything yet."),
+        p("The website describes the pre-alpha project. Contact form handling depends on the deployment configuration; do not include secrets, private keys, invite codes, local admin tokens or sensitive file contents in a message."),
+        h2("The package"),
+        p("The current package is `barnCompute==0.1.0a1` on TestPyPI. It is a command-line alpha for people comfortable testing local infrastructure. It is not a hosted account service."),
         h2("Questions"),
-        p("A contact address will be added here. In the meantime, use the [contact page](/contact)."),
+        p("Use the [contact page](/contact) for non-sensitive questions about the project, setup and roadmap."),
       ],
     },
   ],
@@ -40,32 +43,34 @@ export const privacy: MarketingPage = {
 export const terms: MarketingPage = {
   path: "/legal/terms",
   title: "Terms",
-  description: "Placeholder terms for the Barn Computing website and alpha software. Final text will be published before launch.",
+  description: "Pre-alpha use notes for the Barn Computing website and barnCompute package.",
   hero: {
     eyebrow: "Legal",
-    badge: "Placeholder",
+    badge: "Pre-alpha notice",
     title: "Terms of {use.}",
-    description: "This page will hold the terms for the website and the software. The text below is a placeholder and is not a legal document.",
+    description: "Important use notes for the website and the `barnCompute` pre-alpha package.",
   },
   sections: [
     {
       t: "prose",
       blocks: [
-        warn("Placeholder content. This page has not been reviewed by counsel and must be replaced before launch.", "Not final"),
-        h2("What this page will cover"),
+        warn("This is a practical pre-alpha notice, not a counsel-reviewed terms document.", "Pre-alpha"),
+        h2("What this page covers"),
         ul(
-          "The licence under which the software is offered. It has not been chosen yet.",
-          "Acceptable use of the website and software.",
-          "Warranties and limits of liability, particularly for alpha releases.",
-          "How the terms can change.",
-          "Governing law and how to contact us."
+          "How to think about the website and alpha package while formal terms are prepared.",
+          "The limits of TestPyPI pre-alpha releases.",
+          "Why roadmap pages are not commitments.",
+          "What not to put into issue reports, contact forms or public logs.",
+          "Where to ask project questions."
         ),
         h2("Alpha software"),
-        p("The first releases of Barn are alpha. They may change, contain defects and lose data. Do not rely on them for anything you cannot afford to lose, and keep your own backups."),
+        p("`barnCompute==0.1.0a1` is a TestPyPI pre-alpha. Interfaces, commands, storage layout, protocol details and behavior may change. Do not rely on it for files you cannot afford to lose, and keep independent backups."),
+        h2("Security-sensitive material"),
+        p("Never share Barn private keys, local admin tokens, invite codes, relay credentials, state directories, unredacted logs or sensitive file contents through the website, public issues or chat channels."),
         h2("No promises about the roadmap"),
-        p("Features described as Planned, Future or Exploring are intentions and ideas. They are not commitments, and no dates are promised."),
+        p("Features described as Planned, Future or Exploring are design direction. M2 distributed storage, compute and AI infrastructure are not current shipped capabilities, and no dates are promised."),
         h2("Questions"),
-        p("Use the [contact page](/contact) until a dedicated address is published."),
+        p("Use the [contact page](/contact) for non-sensitive questions about the project."),
       ],
     },
   ],

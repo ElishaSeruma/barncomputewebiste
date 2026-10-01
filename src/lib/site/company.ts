@@ -94,13 +94,13 @@ export const about: MarketingPage = {
 export const roadmap: MarketingPage = {
   path: "/roadmap",
   title: "Roadmap",
-  description: "The layers Barn is being built in, from the M1 foundation toward storage, compute and AI. No dates are promised.",
+  description: "The layers Barn is being built in, from the 0.1.0a1 M1 foundation toward M2 storage, compute and AI. No dates are promised.",
   hero: {
     eyebrow: "Roadmap",
     badge: "No dates promised",
     title: "Built in {layers,} in the open.",
     description:
-      "Barn starts with the parts every later capability depends on. Here is what is being built now, what is planned next and what is only a direction. Anything beyond the current milestone is labelled as such.",
+      "Barn starts with the parts every later capability depends on. The current public artifact is `barnCompute==0.1.0a1` on TestPyPI; later layers are labelled as planned or future until they are built and verified.",
     primary: { label: "Read the docs", href: "/docs/roadmap/overview" },
     secondary: { label: "Follow the blog", href: "/blog" },
     visual: "storage",
@@ -115,16 +115,16 @@ export const roadmap: MarketingPage = {
         {
           when: "Now",
           title: "M1: Foundation",
-          text: "Connect the Barn. Create a private network, admit trusted devices, watch their availability and exchange files between them safely.",
+          text: "Connect the Barn. Create a private network, admit trusted devices, watch availability, import managed files, create explicit shares and exchange files with verified resumable transfers.",
           status: "now",
-          bullets: ["Barn creation", "Node enrolment and approval", "Persistent device identities", "Availability monitoring", "Managed files and explicit shares", "Verified, resumable transfers", "macOS and Windows"],
+          bullets: ["TestPyPI 0.1.0a1", "Node enrolment and approval", "Persistent device identities", "Availability monitoring", "Managed files and explicit shares", "Verified, resumable transfers", "macOS and Windows evidence"],
         },
         {
           when: "Next",
           title: "M2: Distributed storage",
-          text: "Make storage collaborative. Place and recover data across suitable trusted Nodes, so you interact with the Barn rather than every physical location.",
+          text: "Make storage collaborative. Add BRG observations, NBO decision ledgers, Bays, encrypted fragments, placement, location-independent retrieval and repair.",
           status: "next",
-          bullets: ["Placement on more than one Node", "Recovery after a device is lost", "Storage rules you control", "Encryption of stored data"],
+          bullets: ["Bays and logical files", "Encrypted fragments", "Placement NBO", "DT-NBO", "Resilience NBO and repair"],
         },
         {
           when: "Later",
@@ -148,7 +148,7 @@ export const roadmap: MarketingPage = {
       title: "Things we are also exploring.",
       variant: "spotlight",
       items: [
-        { icon: "wifi", title: "Restricted networks", text: "An optional relay so two approved devices can exchange files when the network will not let them reach each other.", tag: "Planned" },
+        { icon: "wifi", title: "Restricted networks", text: "Relay data transport exists in the M1 work, but complete public-Wi-Fi operation still needs an outbound-only coordinator control path that keeps the relay non-authoritative.", tag: "Closure gate" },
         { icon: "rocket", title: "Running as a service", text: "Start the coordinator and agent at login without keeping a terminal open.", tag: "Planned" },
         { icon: "lock", title: "Encryption at rest", text: "Protecting managed files on disk, built alongside the storage milestone.", tag: "Planned" },
         { icon: "monitor", title: "More platforms", text: "Beyond macOS and Windows. No commitments yet.", tag: "Exploring" },
@@ -160,9 +160,9 @@ export const roadmap: MarketingPage = {
       t: "faq",
       title: "About the roadmap",
       items: [
-        { q: "When will distributed storage arrive?", a: "We do not give dates. It is planned for after the foundation has been proven on real machines." },
+        { q: "When will distributed storage arrive?", a: "We do not give dates. The M2 specification is written around Bays, encrypted fragments, placement, retrieval and repair, and it depends on the M1 closure gates." },
         { q: "Will everything on this page be built?", a: "Not necessarily. Planned items are intentions, and exploratory items are ideas. Priorities change as we learn." },
-        { q: "How will I know what is available?", a: "Pages describe the current milestone as in development until it passes acceptance testing. Everything else carries a Planned, Future or Exploring label." },
+        { q: "How will I know what is available?", a: "Pages name the current TestPyPI pre-alpha separately from M1 closure evidence, M2 planned work and future directions." },
         { q: "Can I influence it?", a: "Yes. Tell us about your setup through the contact page." },
       ],
     },
@@ -218,7 +218,7 @@ export const faq: MarketingPage = {
           title: "Platforms and networking",
           items: [
             { q: "Which platforms does Barn support?", a: "macOS and Windows are the first desktop targets." },
-            { q: "Do my devices need to be on the same Wi-Fi?", a: "Today they need to reach each other on a trusted network. Support for restricted networks is planned, and depends on what a given network allows." },
+            { q: "Do my devices need to be on the same Wi-Fi?", a: "Today they need trusted network reachability for coordinator control and direct peer transfer. The relay work is real, but full public-Wi-Fi operation remains a closure gate until coordinator control can also use an outbound-only path." },
             { q: "Do I need to open ports on my router?", a: "No. Barn is built for your local network and does not open router ports." },
             { q: "Does Barn run on Linux or phones?", a: "Not in the first milestone." },
           ],

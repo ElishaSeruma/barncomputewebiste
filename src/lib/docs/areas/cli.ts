@@ -33,7 +33,7 @@ function cmd(c: CmdDef): PageDef {
   }
   if (c.example) blocks.push(h2("Example"), code(c.example));
   if (c.notes) blocks.push(...c.notes);
-  return page(c.slug, c.title, c.summary, blocks, { badge: "Draft", navLabel: c.title.replace(/^barn (?:coordinator|node|file|share|transfer) /, "").replace(/^barn /, "") });
+  return page(c.slug, c.title, c.summary, blocks, { badge: "Pre-alpha", navLabel: c.title.replace(/^barn (?:coordinator|node|file|share|transfer) /, "").replace(/^barn /, "") });
 }
 
 export const cli: AreaDef = {
@@ -59,7 +59,7 @@ export const cli: AreaDef = {
           ["barn config", "Read and change settings."]
         ),
         tip("Long running commands, such as `coordinator start` and `node start`, run in the foreground. Open a second terminal for other commands."),
-      ], { badge: "Draft" }),
+      ], { badge: "Pre-alpha" }),
       page("global-flags", "Global flags and output", "Flags that work on every command, output formats and exit codes.", [
         table(
           ["Flag", "Description"],
@@ -76,7 +76,7 @@ export const cli: AreaDef = {
           ["2", "Invalid usage or arguments."]
         ),
         note("Exit codes are a draft. They will be finalised before release."),
-      ], { badge: "Draft" }),
+      ], { badge: "Pre-alpha" }),
     ]),
     section("commands", "Commands", [
       folder("coordinator", "coordinator", [

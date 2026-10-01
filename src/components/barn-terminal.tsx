@@ -17,7 +17,7 @@ import {
   type TerminalLine,
 } from "@/components/ui/terminal-animation";
 
-// Barn states: green / yellow / red. All output is illustrative, not real Barn output.
+// Barn states: green / yellow / red. Output mirrors the current pre-alpha CLI flows.
 export type TerminalTone = "green" | "yellow" | "red" | "muted" | "note";
 export interface TermLine {
   text: string;
@@ -53,39 +53,40 @@ export const DEFAULT_TERM_TABS: TermTab[] = [
     command: "barn nodes",
     lines: [
       { text: "", delay: 60 },
-      { text: "  ● MacNode        ONLINE", tone: "green", delay: 260 },
-      { text: "  ● WindowsNode    ONLINE", tone: "green", delay: 260 },
-      { text: "  ● StudyPC        SUSPECT", tone: "yellow", delay: 260 },
-      { text: "  ● OldLaptop      OFFLINE", tone: "red", delay: 260 },
+      { text: "  NODE ID   NAME          STATE    PEER", tone: "muted", delay: 180 },
+      { text: "  4f91     MacNode       ONLINE   https://192.168.1.10:8445", tone: "green", delay: 260 },
+      { text: "  7a3d     WindowsNode   ONLINE   https://192.168.1.20:8445", tone: "green", delay: 260 },
+      { text: "  b812     StudyPC       SUSPECT  last heartbeat 18s ago", tone: "yellow", delay: 260 },
       { text: "", delay: 60 },
-      { text: "  Illustrative output", tone: "note", delay: 100 },
+      { text: "  barnCompute 0.1.0a1 pre-alpha", tone: "note", delay: 100 },
     ],
   },
   {
     label: "share",
-    command: "barn share create sample.bin --to WindowsNode --ttl 30m",
+    command: "barn share create 91c4 --to 7a3d --ttl 30m",
     lines: [
       { text: "", delay: 60 },
-      { text: "  ✓ Share created", tone: "green", delay: 300 },
-      { text: "    file       sample.bin", tone: "muted", delay: 160 },
-      { text: "    recipient  WindowsNode", tone: "muted", delay: 160 },
-      { text: "    access     read-only, expires in 30m", tone: "yellow", delay: 260 },
+      { text: "  share_id     c0de", tone: "green", delay: 300 },
+      { text: "  file_id      91c4", tone: "muted", delay: 160 },
+      { text: "  recipient    7a3d", tone: "muted", delay: 160 },
+      { text: "  expires_in   30m", tone: "yellow", delay: 260 },
       { text: "", delay: 60 },
-      { text: "  Illustrative output", tone: "note", delay: 100 },
+      { text: "  read-only grant; fetch requires recipient authentication", tone: "note", delay: 100 },
     ],
   },
   {
     label: "transfer",
-    command: "barn transfer status",
+    command: "barn transfer status 5e1a",
     lines: [
       { text: "", delay: 60 },
-      { text: "  sample.bin  ←  MacNode", tone: "muted", delay: 260 },
-      { text: "  ■■■■■■■■■■■■■■■■■□□□□□□□  17/24 chunks", tone: "yellow", delay: 360 },
-      { text: "  interrupted · resuming from verified chunks", tone: "muted", delay: 420 },
-      { text: "  ■■■■■■■■■■■■■■■■■■■■■■■■  24/24 chunks", tone: "green", delay: 300 },
-      { text: "  ✓ checksum verified", tone: "green", delay: 200 },
+      { text: "  transfer_id  5e1a", tone: "muted", delay: 180 },
+      { text: "  source       4f91 MacNode", tone: "muted", delay: 220 },
+      { text: "  path         direct HTTPS", tone: "green", delay: 220 },
+      { text: "  chunks       17/24 verified", tone: "yellow", delay: 300 },
+      { text: "  resume       verified chunks retained in journal", tone: "muted", delay: 360 },
+      { text: "  sha256       verified after assembly", tone: "green", delay: 240 },
       { text: "", delay: 60 },
-      { text: "  Illustrative output", tone: "note", delay: 100 },
+      { text: "  1 MiB chunks; final output uses no-clobber export", tone: "note", delay: 100 },
     ],
   },
 ];

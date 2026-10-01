@@ -1,37 +1,43 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Barn Computing Website
 
-## Getting Started
+Marketing site and documentation surface for Barn Computing, a Next.js App Router
+site built around the real `barnCompute` Python package and its current
+pre-alpha roadmap.
 
-First, run the development server:
+## Project Content
+
+The site describes:
+
+- `barnCompute==0.1.0a1` on TestPyPI.
+- The `barn` CLI for creating a private Barn, enrolling Nodes, importing managed
+  files, creating explicit shares, and fetching verified transfers.
+- The M1 foundation: coordinator trust, device identity, availability,
+  recipient-scoped sharing, resumable transfers, and macOS/Windows evidence.
+- The M1 closure gates that still need evidence before accepted release claims.
+- The M2 storage-fabric plan: BRG, NBO decisions, Bays, encrypted fragments,
+  placement, location-independent retrieval, and repair.
+
+Product, solution, blog, legal, docs, `llms.txt`, and route metadata copy lives
+mostly in `src/lib/site/*` and `src/lib/docs/areas/*`.
+
+## Development
 
 ```bash
+npm install
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open `http://localhost:3000`.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Validation
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+```bash
+npm run lint
+npm run build
+```
 
-## Learn More
+## Deployment
 
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
-# barncomputewebiste
+This repository is intended to deploy on Vercel from the connected GitHub
+repository. Production deployments should follow a clean `npm run build` and a
+pushed commit.

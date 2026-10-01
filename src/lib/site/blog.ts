@@ -1,7 +1,7 @@
 import { h2, note, p, tip, ul } from "@/lib/docs/types";
 import type { BlogPost } from "./types";
 
-// Draft posts. Titles, dates and copy are placeholders that will be replaced before launch.
+// Project notes aligned to the current barnCompute pre-alpha package and roadmap.
 export const posts: BlogPost[] = [
   {
     slug: "introducing-barn",
